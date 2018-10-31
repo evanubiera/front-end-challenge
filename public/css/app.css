@@ -1,0 +1,72 @@
+#weather-forecast {
+  width: 75%;
+  padding: 1em;
+  margin: 1em auto;
+  background-color: beige;
+  border: 1px solid #00afbe;
+  position: relative;
+
+  a:visited {
+    color: red;
+  }
+}
+
+#weather-forecast .clear-button {
+  position: absolute;
+  top: 1em;;
+  right: 1em;
+}
+
+#weather-forecast .active {
+  background: purple;
+  color: white;
+}
+
+#five-day-forecast {
+  display: block;
+  width: 100%;
+}
+
+#temperature-deltas {
+  width: 100%;
+}
+
+.day-forecast-wrapper, .hour-forecast-wrapper {
+  display: inline-block;
+  padding-top: 20px;
+  vertical-align: top;
+}
+
+.forecast-day-name {
+  text-align: center;
+  font-weight: bold;
+}
+
+.forecast-date {
+  text-align: center;
+  font-style: italic;
+}
+
+.hi-lo-day-temp {
+  text-align: center;
+  color: #666;
+}
+
+.description {
+  text-align: center;
+}
+
+a {
+  color: #666666;
+  list-style-type: none;
+}
+
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+ul {
+  cursor: pointer;
+}

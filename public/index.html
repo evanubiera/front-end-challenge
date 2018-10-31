@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css">
+    <link rel="stylesheet" type="text/css" href="/css/app.css">
+    <title>Front-End Coding Challenge</title>
+  </head>
+  <body>
+    <div class="container">
+      <h2 class="title">
+        Front-End Coding Challenge
+      </h2>
+
+      <div id="weather-forecast">
+        <div class="columns">
+          <div id="five-day-forecast">
+          </div>
+        </div>
+        <div class="columns">
+          <div id="temperature-deltas">
+          </div>
+        </div>
+      </div>
+      <hr />
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.4.1/jasmine.css"></link>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.4.1/jasmine.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.4.1/jasmine-html.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jasmine/2.4.1/boot.js"></script>
+
+    <script type="module">
+      import WeatherForecast from '/js/app.js';
+      const myWidget = new WeatherForecast();
+
+      describe('Weather Forecast', () => { 
+        var weatherPromise;
+          
+        //monitor whether this promise will return anything  
+        beforeEach(function() {
+          spyOn(window, 'fetch').and.callThrough();
+          weatherPromise = myWidget.getWeather();
+        });
+
+        //we get the weather
+        it('returns a promise', function(done) {
+          console.log("promise", weatherPromise);
+          expect(weatherPromise).toEqual(jasmine.any(Promise));
+          done();
+        });
+
+
+      });
+    </script>
+
+  </body>
+</html>
